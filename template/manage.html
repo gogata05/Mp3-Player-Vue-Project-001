@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Music App</title>
+    <!-- CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+      integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+      crossorigin="anonymous"
+    />
+    <link href="assets/css/main.css" rel="stylesheet" />
+  </head>
+
+  <body class="bg-gray-100 font-sans pb-24">
+    <!-- Header -->
+    <header id="header" class="bg-gray-800">
+      <nav class="container mx-auto flex justify-between items-center py-5 px-4">
+        <!-- App Name -->
+        <a class="text-white font-bold uppercase text-2xl" href="#">Music App</a>
+
+        <div>
+          <!-- Primary Navigation -->
+          <ul class="flex space-x-4">
+            <!-- Navigation Links -->
+            <li>
+              <a class="text-white hover:underline" href="#">Login / Register</a>
+            </li>
+            <li>
+              <a class="text-white hover:underline" href="#">Manage</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <section class="container mx-auto mt-6">
+      <div class="md:grid md:grid-cols-3 md:gap-6">
+        <!-- Upload Section -->
+        <div class="col-span-1">
+          <div class="bg-white rounded shadow p-6">
+            <h2 class="font-bold text-lg border-b pb-4 mb-4 flex justify-between">
+              Upload
+              <i class="fas fa-upload text-green-400 text-2xl"></i>
+            </h2>
+            <div class="text-center border-dashed border-2 border-gray-400 p-10 rounded cursor-pointer hover:bg-green-400 hover:text-white transition duration-300">
+              <h5>Drop your files here</h5>
+            </div>
+            <div class="mt-6 space-y-4">
+              <!-- Progress Bars -->
+              <div>
+                <div class="font-bold text-sm">Just another song.mp3</div>
+                <div class="h-4 bg-gray-200 rounded">
+                  <div class="h-full bg-blue-400" style="width: 75%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="font-bold text-sm">Just another song.mp3</div>
+                <div class="h-4 bg-gray-200 rounded">
+                  <div class="h-full bg-blue-400" style="width: 35%"></div>
+                </div>
+              </div>
+              <div>
+                <div class="font-bold text-sm">Just another song.mp3</div>
+                <div class="h-4 bg-gray-200 rounded">
+                  <div class="h-full bg-blue-400" style="width: 55%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- My Songs Section -->
+        <div class="col-span-2">
+          <div class="bg-white rounded shadow p-6">
+            <h2 class="font-bold text-lg border-b pb-4 mb-4 flex justify-between">
+              My Songs
+              <i class="fas fa-compact-disc text-green-400 text-2xl"></i>
+            </h2>
+            <div class="space-y-4">
+              <!-- Song Item -->
+              <div class="border border-gray-200 p-4 rounded">
+                <div class="flex justify-between items-center">
+                  <h4 class="text-2xl font-bold">Song Name</h4>
+                  <div class="space-x-2">
+                    <button class="bg-red-600 text-white py-1 px-2 rounded">
+                      <i class="fa fa-times"></i>
+                    </button>
+                    <button class="bg-blue-600 text-white py-1 px-2 rounded">
+                      <i class="fa fa-pencil-alt"></i>
+                    </button>
+                  </div>
+                </div>
+                <form class="mt-4 space-y-4">
+                  <div>
+                    <label class="block mb-1">Song Title</label>
+                    <input
+                      type="text"
+                      class="w-full py-2 px-3 border border-gray-300 rounded focus:outline-none focus:border-black"
+                      placeholder="Enter Song Title"
+                    />
+                  </div>
+                  <div>
+                    <label class="block mb-1">Genre</label>
+                    <input
+                      type="text"
+                      class="w-full py-2 px-3 border border-gray-300 rounded focus:outline-none focus:border-black"
+                      placeholder="Enter Genre"
+                    />
+                  </div>
+                  <div class="flex space-x-2">
+                    <button type="submit" class="bg-green-600 text-white py-2 px-4 rounded">Submit</button>
+                    <button type="button" class="bg-gray-600 text-white py-2 px-4 rounded">Go Back</button>
+                  </div>
+                </form>
+              </div>
+              <!-- Additional Song Items can be replicated as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Player -->
+    <div class="fixed bottom-0 left-0 bg-white px-4 py-2 w-full shadow-md">
+      <div class="flex items-center justify-between">
+        <div class="text-center">
+          <span class="font-bold">Song Title</span> by <span>Artist</span>
+        </div>
+        <div class="flex items-center space-x-4">
+          <button type="button">
+            <i class="fa fa-play text-gray-500 text-xl"></i>
+          </button>
+          <div>00:00</div>
+          <div class="w-full h-2 bg-gray-200 rounded relative cursor-pointer">
+            <span class="absolute top-0 left-1/2 transform -translate-x-1/2 text-gray-800">
+              <i class="fas fa-circle"></i>
+            </span>
+            <div class="h-2 bg-gradient-to-r from-green-500 to-green-400" style="width: 50%"></div>
+          </div>
+          <div>03:06</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
