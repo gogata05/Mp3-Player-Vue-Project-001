@@ -1,85 +1,70 @@
 <template>
   <div
-    v-if="showAlert"
-    :class="alertClass"
     class="text-white text-center font-bold p-4 mb-4"
+    v-if="login_show_alert"
+    :class="login_alert_variant"
   >
-    {{ alertMessage }}
+    {{ login_alert_msg }}
   </div>
-  <Form @submit="onSubmit" v-slot="{ errors }">
+  <vee-form :validation-schema="loginSchema" @submit="login">
     <!-- Email -->
     <div class="mb-3">
-      <label for="email" class="inline-block mb-2">Email</label>
-      <Field
-        id="email"
+      <label class="inline-block mb-2">Email</label>
+      <vee-field
         name="email"
         type="email"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         placeholder="Enter Email"
       />
-      <span class="text-red-600">{{ errors.email }}</span>
+      <ErrorMessage class="text-red-600" name="email" />
     </div>
     <!-- Password -->
     <div class="mb-3">
-      <label for="password" class="inline-block mb-2">Password</label>
-      <Field
-        id="password"
+      <label class="inline-block mb-2">Password</label>
+      <vee-field
         name="password"
         type="password"
         class="block w-full py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         placeholder="Password"
       />
-      <span class="text-red-600">{{ errors.password }}</span>
+      <ErrorMessage class="text-red-600" name="password" />
     </div>
     <button
       type="submit"
       class="block w-full bg-purple-600 text-white py-1.5 px-3 rounded transition hover:bg-purple-700"
-      :disabled="isSubmitting"
+      :disabled="login_in_submission"
     >
       Submit
     </button>
-  </Form>
+  </vee-form>
 </template>
 
 <script>
-import { ref } from 'vue';
-import { Form, Field } from 'vee-validate';
-import * as yup from 'yup';
-
 export default {
   name: "LoginForm",
-  setup() {
-    const isSubmitting = ref(false);
-    const showAlert = ref(false);
-    const alertClass = ref("bg-blue-500");
-    const alertMessage = ref("Please wait! We are logging you in.");
-
-    const schema = yup.object({
-      email: yup.string().required('Email is required').email('Invalid email format'),
-      password: yup.string().required('Password is required').min(9, 'Password must be at least 9 characters').max(100, 'Password cannot exceed 100 characters'),
-    });
-
-    const onSubmit = (values) => {
-      showAlert.value = true;
-      isSubmitting.value = true;
-      alertClass.value = "bg-blue-500";
-      alertMessage.value = "Please wait! We are logging you in.";
-
-      setTimeout(() => {
-        alertClass.value = "bg-green-500";
-        alertMessage.value = "Success! You are now logged in.";
-        console.log(values);
-      }, 2000);
-    };
-
+  data() {
     return {
-      schema,
-      isSubmitting,
-      showAlert,
-      alertClass,
-      alertMessage,
-      onSubmit,
+      loginSchema: {
+        email: "required|email",
+        password: "required|min:9|max:100",
+      },
+      login_in_submission: false,
+      login_show_alert: false,
+      login_alert_variant: "bg-blue-500",
+      login_alert_msg: "Please wait! We are logging you in.",
     };
+  },
+  methods: {
+    login(values) {
+      this.login_show_alert = true;
+      this.login_in_submission = true;
+      this.login_alert_variant = "bg-blue-500";
+      this.login_alert_msg = "Please wait! We are logging you in.";
+
+      this.login_alert_variant = "bg-green-500";
+      this.login_alert_msg = "Success! You are now logged in.";
+      console.log(values);
+    },
   },
 };
 </script>
