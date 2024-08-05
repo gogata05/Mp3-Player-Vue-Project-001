@@ -1,48 +1,65 @@
-# music
+Mp3-Player-Vue-Project-001
 
-This template should help get you started developing with Vue 3 in Vite.
+# Mp3-Player
 
-## Recommended IDE Setup
+## Introduction
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Mp3-Player is application for uploading and listening to songs.
 
-## Customize configuration
+## Features
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- Firebase Authentication,Database,Storage
+- i18n for Internationalization
+- Vitest for testing
+- Tailwind CSS
 
-## Project Setup
+## How to use?
 
-```sh
-npm install
-```
+- 0.Download the repository and extract it to folder
+- 1.Open the folder with Visual Studio Code
+- 2.npm install
+- 3.npm run dev
+- 4.Open the browser and go to http://localhost:5173
+- 5.Enjoy!
 
-### Compile and Hot-Reload for Development
+## Photos
 
-```sh
-npm run dev
-```
+### Uploaded Songs
 
-### Compile and Minify for Production
+![Uploaded Songs](./public/assets/images/1-UploadedSОngs.png)
 
-```sh
-npm run build
-```
+### Songs Progress Bar
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+![Songs Progress Bar](./public/assets/images/2-SongsProgressBar.png)
 
-```sh
-npm run test:unit
-```
+### Home - All Songs
 
-### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
+![Home - All Songs](./public/assets/images/3-Home%20-%20All%20Songs.png)
 
-```sh
-npm run build
-npm run test:e2e # or `npm run test:e2e:ci` for headless testing
-```
+### Comments
 
-### Lint with [ESLint](https://eslint.org/)
+![Comments](./public/assets/images/4-comments.png)
 
-```sh
-npm run lint
-```
+### Edit Song Name and Genre
+
+![Edit Song Name and Genre](./public/assets/images/5-Edit%20SongName%20and%20Genre.png)
+
+### Firebase Authentication
+
+![Firebase Authentication](./public/assets/images/6-firebase%20auth.png)
+
+### Firebase Storage
+
+![Firebase Storage](./public/assets/images/7-Firebase%20Storage.png)
+
+### Firebase Cloud Firestore
+
+![Firebase Cloud Firestore](./public/assets/images/8-Firebase%20Cloud%20Firestore.png)
+
+## Swagger Endpoints
+
+![Swagger Endpoints](https://i.imgur.com/pvzMENj.png)
+
+## Home page with Search and Dashboard
+
+![Home page with Search and Dashboard](/client/Images/Home%20page%20with%20Search%20and%20Dashboard.png)
