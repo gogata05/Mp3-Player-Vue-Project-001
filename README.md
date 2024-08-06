@@ -26,7 +26,7 @@ Mp3-Player is application for uploading and listening to songs.
 
 ### Uploaded Songs
 
-![Uploaded Songs](./public/assets/images/1-UploadedSОngs.png)
+![Uploaded Songs](./public/assets/images/1-UploadedSOngs.png)
 
 ### Songs Progress Bar
 
@@ -55,11 +55,3 @@ Mp3-Player is application for uploading and listening to songs.
 ### Firebase Cloud Firestore
 
 ![Firebase Cloud Firestore](./public/assets/images/8-Firebase%20Cloud%20Firestore.png)
-
-## Swagger Endpoints
-
-![Swagger Endpoints](https://i.imgur.com/pvzMENj.png)
-
-## Home page with Search and Dashboard
-
-![Home page with Search and Dashboard](/client/Images/Home%20page%20with%20Search%20and%20Dashboard.png)
